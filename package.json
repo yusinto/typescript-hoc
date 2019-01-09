@@ -1,0 +1,61 @@
+{
+  "name": "typescript-hoc",
+  "version": "1.0.0",
+  "description": "Playground to demo react hocs with ts and jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "tslint -p tsconfig.json 'src/**/*.ts*'",
+    "start": "ts-node src/server/index.ts",
+    "tsc": "rimraf lib && tsc",
+    "startt": "node lib/server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusinto/typescript-hoc.git"
+  },
+  "keywords": [
+    "react",
+    "hoc",
+    "ts",
+    "typescript",
+    "jest"
+  ],
+  "author": "Yusinto Ngadiman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yusinto/typescript-hoc/issues"
+  },
+  "homepage": "https://github.com/yusinto/typescript-hoc#readme",
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
+    "@types/prop-types": "^15.5.8",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/react-test-renderer": "^16.0.3",
+    "@types/webpack-node-externals": "^1.6.3",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.2.2",
+    "universal-hot-reload": "^2.0.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1"
+  }
+}
