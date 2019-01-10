@@ -15,18 +15,27 @@ interface HocState extends InjectedProps {
   isLoading: boolean;
 }
 
+export interface EnhancedComponent extends React.Component {
+  fetchData(url: string): Promise<void>;
+  componentDidMount(): Promise<void>;
+}
+
 export default function withData<P>(WrappedComponent: React.ComponentType<P & InjectedProps>, dataUrl: string) {
-  return class extends React.Component<P, HocState> {
+  return class extends React.Component<P, HocState> implements EnhancedComponent {
     readonly state: HocState = { isLoading: true, data: {} };
 
-    fetchData = async () => {
-      const response = await fetch(dataUrl);
-      const data = await response.json();
-      this.setState({ isLoading: false, data });
+    fetchData = async (url: string) => {
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        this.setState({ isLoading: false, data });
+      } catch (e) {
+        console.log(`error: ${e}`);
+      }
     };
 
     async componentDidMount() {
-      await this.fetchData();
+      await this.fetchData(dataUrl);
     }
 
     render() {
