@@ -1,24 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`withData componentDidMount fetches data 1`] = `
-<class_1>
-  <App
-    data={
-      Object {
-        "body": "This is a test body",
-        "id": 5,
-        "title": "Test title",
-        "userId": 6,
-      }
+<App
+  data={
+    Object {
+      "body": "This is a test body",
+      "id": 5,
+      "title": "Test title",
+      "userId": 6,
     }
-  >
-    <div>
-      Test title
-      <br />
-      This is a test body
-    </div>
-  </App>
-</class_1>
+  }
+/>
 `;
-
-exports[`withData renders loading initially 1`] = `"Loading"`;

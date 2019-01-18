@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 export interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
+  userId?: number;
+  id?: number;
+  title?: string;
+  body?: string;
 }
 
 export interface InjectedProps {
-  data: any | Post;
+  data: Post;
 }
 
 interface HocState extends InjectedProps {
@@ -25,13 +25,9 @@ export default function withData<P>(WrappedComponent: React.ComponentType<P & In
     readonly state: HocState = { isLoading: true, data: {} };
 
     fetchData = async (url: string) => {
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({ isLoading: false, data });
-      } catch (e) {
-        console.log(`error: ${e}`);
-      }
+      const response = await fetch(url);
+      const data = (await response.json()) as Post;
+      this.setState({ isLoading: false, data });
     };
 
     async componentDidMount() {

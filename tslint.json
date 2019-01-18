@@ -35,7 +35,8 @@
         "no-console": false,
         "match-default-export-name": false,
         "no-submodule-imports": false,
-        "newline-before-return": false
+        "newline-before-return": false,
+        "no-import-side-effect": false
     },
     "rulesDirectory": []
 }
